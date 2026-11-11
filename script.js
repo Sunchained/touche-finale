@@ -7,6 +7,21 @@ const claviers = [
 const zoneProduits = document.querySelector(".produits");
 for (const clavier of claviers) {
   const ligneClavier = document.createElement("li");
-  ligneClavier.textContent = clavier.nom;
+  const nomClavier = document.createElement("h3");
+  nomClavier.textContent = clavier.nom;
+  ligneClavier.append(nomClavier);
+  const prixClavier = document.createElement("p");
+  prixClavier.textContent = clavier.prix + " €";
+  ligneClavier.append(prixClavier);
+  const tailleClavier = document.createElement("p");
+  tailleClavier.textContent = clavier.taille;
+  ligneClavier.append(tailleClavier);
+  const stockClavier = document.createElement("p");
+  if (clavier.stock === 0) {
+    stockClavier.textContent = "Rupture de stock";
+  } else {
+    stockClavier.textContent = "Disponible";
+  }
+  ligneClavier.append(stockClavier);
   zoneProduits.append(ligneClavier);
 }
