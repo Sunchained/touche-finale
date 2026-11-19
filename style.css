@@ -1,0 +1,40 @@
+/* Couleurs */
+
+:root {
+  --bureau: #1e1f24;
+  --touche: #ece6d8;
+  --bord: #b9b09c;
+  --encre: #26262b;
+  --echap: #e8772e;
+}
+
+/* Base de la page */
+
+body {
+  background-color: var(--bureau);
+  color: var(--touche);
+  margin: 0;
+  padding: 0 20px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* En-tête */
+
+/* Catalogue */
+
+.produits {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+
+/* Carte produit */
+
+.carte {
+  background-color: var(--touche);
+  color: var(--encre);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 0 var(--bord);
+}
