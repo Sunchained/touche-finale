@@ -4,6 +4,8 @@
   --bureau: #1e1f24;
   --touche: #ece6d8;
   --bord: #b9b09c;
+  --reflet: #f6f2e9;
+  --dessous: #a69d89;
   --encre: #26262b;
   --echap: #e8772e;
 }
@@ -34,7 +36,38 @@ body {
 .carte {
   background-color: var(--touche);
   color: var(--encre);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 6px 0 var(--bord);
+  aspect-ratio: 1/1;
+  border-style: solid;
+  border-width: 4px 9px 12px;
+  border-color: var(--reflet) var(--bord) var(--dessous);
+  transition:
+    transform 0.1s,
+    border-bottom-width 0.1s,
+    margin-bottom 0.1s;
+}
+
+.carte:hover {
+  transform: translateY(6px);
+  border-bottom-width: 6px;
+  margin-bottom: 6px;
+}
+
+/* Grand écran */
+
+@media (min-width: 1024px) {
+  .produits {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+/* Moins d'animations */
+
+@media (prefers-reduced-motion: reduce) {
+  .carte {
+    transition: none;
+  }
 }
