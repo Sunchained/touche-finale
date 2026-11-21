@@ -46,12 +46,34 @@ body {
     transform 0.1s,
     border-bottom-width 0.1s,
     margin-bottom 0.1s;
+  position: relative;
 }
 
 .carte:hover {
   transform: translateY(6px);
   border-bottom-width: 6px;
   margin-bottom: 6px;
+}
+
+.carte-prix {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+}
+
+.carte-nom {
+  margin-top: 0;
+}
+
+/* Tablette */
+
+@media (min-width: 600px) {
+  .produits {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* Grand écran */
