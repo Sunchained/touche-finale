@@ -24,6 +24,7 @@ for (const clavier of claviers) {
   stockClavier.classList.add("carte-stock");
   if (clavier.stock === 0) {
     stockClavier.textContent = "Rupture de stock";
+    ligneClavier.classList.add("rupture");
   } else {
     stockClavier.textContent = "Disponible";
   }
