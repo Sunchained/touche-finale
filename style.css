@@ -8,6 +8,9 @@
   --dessous: #a69d89;
   --encre: #26262b;
   --echap: #e8772e;
+  --echap-reflet: #f29a5c;
+  --echap-bord: #cf6726;
+  --echap-dessous: #b5571c;
 }
 
 /* Base de la page */
@@ -40,19 +43,18 @@ body {
   padding: 20px;
   aspect-ratio: 1/1;
   border-style: solid;
-  border-width: 4px 9px 12px;
+  border-width: 4px 9px 6px;
   border-color: var(--reflet) var(--bord) var(--dessous);
+  box-shadow: 0 6px 0 var(--dessous);
   transition:
     transform 0.1s,
-    border-bottom-width 0.1s,
-    margin-bottom 0.1s;
+    box-shadow 0.1s;
   position: relative;
 }
 
 .carte:hover {
   transform: translateY(6px);
-  border-bottom-width: 6px;
-  margin-bottom: 6px;
+  box-shadow: 0 0 0 var(--dessous);
 }
 
 .carte-prix {
@@ -70,6 +72,12 @@ body {
 
 .rupture {
   opacity: 0.7;
+}
+
+.rupture:hover {
+  transform: none;
+  box-shadow: 0 6px 0 var(--dessous);
+  cursor: not-allowed;
 }
 
 /* Tablette */
