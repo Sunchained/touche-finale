@@ -1,13 +1,36 @@
 const claviers = [
-  { nom: "Aube 75", prix: 129, taille: "75 %", stock: 8 },
-  { nom: "Brume 65", prix: 99, taille: "65 %", stock: 0 },
-  { nom: "Cime 100", prix: 159, taille: "100 %", stock: 14 },
+  {
+    nom: "Aube 75",
+    prix: 129,
+    taille: "75 %",
+    stock: 8,
+    image: "images/aube-75.jpg",
+  },
+  {
+    nom: "Brume 75",
+    prix: 99,
+    taille: "75 %",
+    stock: 0,
+    image: "images/brume-75.jpg",
+  },
+  {
+    nom: "Cime 40",
+    prix: 159,
+    taille: "40 %",
+    stock: 14,
+    image: "images/cime-40.jpg",
+  },
 ];
 
 const zoneProduits = document.querySelector(".produits");
 for (const clavier of claviers) {
   const ligneClavier = document.createElement("li");
   ligneClavier.classList.add("carte");
+  const photoClavier = document.createElement("img");
+  photoClavier.classList.add("carte-photo");
+  photoClavier.src = clavier.image;
+  photoClavier.alt = "Clavier " + clavier.nom + " vu du dessus";
+  ligneClavier.append(photoClavier);
   const nomClavier = document.createElement("h3");
   nomClavier.classList.add("carte-nom");
   nomClavier.textContent = clavier.nom;

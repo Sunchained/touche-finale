@@ -57,6 +57,12 @@ body {
   box-shadow: 0 0 0 var(--dessous);
 }
 
+.carte-photo {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
 .carte-prix {
   position: absolute;
   right: 16px;
