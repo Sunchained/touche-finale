@@ -3,6 +3,7 @@ const claviers = [
     nom: "Aube 75",
     prix: 129,
     taille: "75 %",
+    switches: "Linéaires",
     stock: 8,
     image: "images/aube-75.jpg",
   },
@@ -10,6 +11,7 @@ const claviers = [
     nom: "Brume 75",
     prix: 99,
     taille: "75 %",
+    switches: "Tactiles",
     stock: 0,
     image: "images/brume-75.jpg",
   },
@@ -17,6 +19,7 @@ const claviers = [
     nom: "Cime 40",
     prix: 159,
     taille: "40 %",
+    switches: "Clicky",
     stock: 14,
     image: "images/cime-40.jpg",
   },
@@ -35,14 +38,10 @@ for (const clavier of claviers) {
   nomClavier.classList.add("carte-nom");
   nomClavier.textContent = clavier.nom;
   ligneClavier.append(nomClavier);
-  const prixClavier = document.createElement("p");
-  prixClavier.classList.add("carte-prix");
-  prixClavier.textContent = clavier.prix + " €";
-  ligneClavier.append(prixClavier);
-  const tailleClavier = document.createElement("p");
-  tailleClavier.classList.add("carte-taille");
-  tailleClavier.textContent = clavier.taille;
-  ligneClavier.append(tailleClavier);
+  const detailsClavier = document.createElement("p");
+  detailsClavier.classList.add("carte-details");
+  detailsClavier.textContent = clavier.taille + " · " + clavier.switches;
+  ligneClavier.append(detailsClavier);
   const stockClavier = document.createElement("p");
   stockClavier.classList.add("carte-stock");
   if (clavier.stock === 0) {
@@ -52,5 +51,9 @@ for (const clavier of claviers) {
     stockClavier.textContent = "Disponible";
   }
   ligneClavier.append(stockClavier);
+  const prixClavier = document.createElement("p");
+  prixClavier.classList.add("carte-prix");
+  prixClavier.textContent = clavier.prix + " €";
+  ligneClavier.append(prixClavier);
   zoneProduits.append(ligneClavier);
 }
