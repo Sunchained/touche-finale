@@ -57,3 +57,14 @@ for (const clavier of claviers) {
   ligneClavier.append(prixClavier);
   zoneProduits.append(ligneClavier);
 }
+
+const categories = ["Claviers", "Switches", "Keycaps"];
+const zoneMenu = document.querySelector(".menu");
+for (const categorie of categories) {
+  const ligneMenu = document.createElement("li");
+  const lienMenu = document.createElement("a");
+  lienMenu.textContent = categorie;
+  lienMenu.href = "?categorie=" + categorie;
+  ligneMenu.append(lienMenu);
+  zoneMenu.append(ligneMenu);
+}
