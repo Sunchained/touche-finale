@@ -6,6 +6,7 @@ const claviers = [
     switches: "Linéaires",
     stock: 8,
     image: "images/aube-75.jpg",
+    categorie: "Claviers",
   },
   {
     nom: "Brume 75",
@@ -14,6 +15,7 @@ const claviers = [
     switches: "Tactiles",
     stock: 0,
     image: "images/brume-75.jpg",
+    categorie: "Claviers",
   },
   {
     nom: "Cime 40",
@@ -22,11 +24,19 @@ const claviers = [
     switches: "Clicky",
     stock: 14,
     image: "images/cime-40.jpg",
+    categorie: "Claviers",
   },
 ];
 
+const parametres = new URLSearchParams(window.location.search);
+const categorieChoisie = parametres.get("categorie");
+console.log(categorieChoisie);
+
 const zoneProduits = document.querySelector(".produits");
 for (const clavier of claviers) {
+  if (categorieChoisie !== null && clavier.categorie !== categorieChoisie) {
+    continue;
+  }
   const ligneClavier = document.createElement("li");
   ligneClavier.classList.add("carte");
   const photoClavier = document.createElement("img");
